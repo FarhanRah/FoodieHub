@@ -1,0 +1,186 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    background: url(https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/143532658/original/57eeb647ac8051b308c0ed8d88bcd8254bd598a0/make-anime-background-arts-for-you.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* object-fit: cover; */
+}
+
+body::after {
+    content: "";
+    background-color: gray;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.navbar .collapse .navbar-text .navLink {
+    text-decoration: none;
+    padding-right: 10px;
+}
+
+.outerbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.outerbox img {
+    /* margin-top: 130px; */
+    width: 300px;
+}
+
+.outerbox .main {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 550px;
+}
+
+.outerbox .main .methods {
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    margin: 10px;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.outerbox .main .methods:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+.outerbox .main span {
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding-left: 10px;
+}
+
+.foot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4vh;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+@media (max-width: 520px) {
+    .outerbox img {
+        /* margin-top: 100px; */
+        width: 200px;
+    }
+
+    .outerbox .main {
+        width: 350px;
+    }
+
+    .outerbox .main span {
+        font-size: 0.8rem;
+    }
+
+    .outerbox .main .methods i {
+        font-size: 5vw;
+    }
+
+    .foot {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-height: 550px) {
+    /* body {
+        height: 120vh;
+    } */
+
+    .outerbox {
+        height: 170vh;
+    }
+
+    .outerbox img {
+        /* margin-top: 100px; */
+        width: 200px;
+    }
+
+    .outerbox .main {
+        width: 350px;
+    }
+
+    .outerbox .main span {
+        font-size: 0.8rem;
+    }
+
+    .outerbox .main .methods i {
+        font-size: 3vw;
+    }
+    
+    .foot {
+        font-size: 0.8rem;
+        height: 7vh;
+    }
+}

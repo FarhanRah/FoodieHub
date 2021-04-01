@@ -1,0 +1,200 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    height: 90.9vh;
+    /* background: url(https://i.pinimg.com/originals/57/85/22/57852274d222b1178d69f91198d1ab98.jpg); */
+    background: url(https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/143532658/original/57eeb647ac8051b308c0ed8d88bcd8254bd598a0/make-anime-background-arts-for-you.png);
+    /* background: url(https://res.cloudinary.com/arre/image/upload/e_sharpen:100,f_auto,q_auto/v1468736401/Recipe2_tsyub5.gif); */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body::after {
+    content: "";
+    background-color: gray;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.navbar .collapse .navbar-text .navLink {
+    text-decoration: none;
+    padding-right: 10px;
+}
+
+.invisible {
+    margin: 70px 0;
+}
+
+.notfound .noresults {
+    /* margin-top: 70px; */
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.notfound .norestaurants {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    color: white;
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.notfound .norestaurants p:last-child {
+    padding-top: 15px;
+}
+
+.notfound p span {
+    font-weight: 700;
+}
+
+.main {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   margin-bottom: 70px;
+}
+
+.main .elements {
+    width: 400px;
+    /* height: 30vh; */
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 10px;
+    text-align: center;
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.main .elements img {
+    width: 95%;
+    height: 170px;
+    object-fit: cover;
+    margin: 2.5%;
+}
+
+.main .elements img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.main .elements p {
+    width: 90%;
+    text-align: center;
+}
+
+.main .elements p span {
+    font-weight: 700;
+}
+
+.foot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4vh;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+@media (max-width: 480px) {
+    body {
+        height: 101vh;
+    }
+
+    .main .elements p {
+        font-size: 0.95rem;
+    }
+    .foot {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 988px) {
+    .main {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-height: 550px) {
+    body {
+        height: 170vh;
+    }
+
+    .main .elements p {
+        font-size: 0.95rem;
+    }
+
+    .foot {
+        font-size: 0.8rem;
+        height: 7vh;
+    }
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= restaurant.name %> - Details</title>
+    <link rel="icon" type="image/png"
+        href="https://4vector.com/i/free-vector-fast-food-lunch-dinner-ff-menu-clip-art_120153_fast-food-lunch-dinner-ff-menu-clip-art/Fast_Food_Lunch_Dinner_Ff_Menu_clip_art_hight.png">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/stars.css">
+    <link rel="stylesheet" href="/css/details.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">FoodieHub</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/restaurants">Restaurants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/restaurants/new">Add a Restaurant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    <% if (currentUser) { %>
+                    <a class="navLink" href="/logout">Logout</a>
+                    <% } else { %>
+                    <a class="navLink" href="/login">Sign In</a>
+                    <a class="navLink" href="/register">Register</a>
+                    <% } %>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="mainMap">
+        <div class="outsideMap">
+            <div id='map' style='width: 100%; padding: 10px; background-color: black;'></div>
+        </div>
+    </div>
+
+    <div class="outNotice">
+        <div class="notice">
+            <% if (!currentUser && restaurant.reviews.length > 0) { %>
+            <p>Please login to post a review.</p>
+            <% } %>
+            <% if (!currentUser || !restaurant.owner.equals(currentUser._id)) { %>
+            <p id="noOwner">Not the owner of this restaurant? Create your own restaurant and check all the
+                functionalities!
+            </p>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="img">
+        <h1><%= restaurant.name %></h1>
+        <p><%= restaurant.description %></p>
+        <p><%= restaurant.location %></p>
+    </div>
+
+    <div class="products">
+        <% if (restaurant.products.length > 0) { %>
+        <% for (let product of restaurant.products) { %>
+        <div class="product">
+            <% if (currentUser && restaurant.owner.equals(currentUser._id)) { %>
+            <div class="buttons">
+                <button><a href="/restaurants/<%= restaurant._id %>/products/<%= product._id %>/edit"><i
+                            class="fas fa-edit" title="Edit"></i></a></button>
+                <form action="/restaurants/<%= restaurant._id %>/products/<%= product._id %>?_method=DELETE"
+                    method="POST">
+                    <button><i class="fas fa-trash-alt" title="Delete"></i></button>
+                </form>
+            </div>
+            <% } %>
+            <h1><span><%= product.name %></span> - $<%= product.price %></h1>
+            <p><%= product.description %></p>
+            <% if (product.onSale === 'Yes') { %>
+            <p>On Sale: <span id="yes">Yep!</span></p>
+            <% } else { %>
+            <p>On Sale: <span id="no">Nope.</span></p>
+            <% } %>
+        </div>
+        <% } %>
+        <% } else { %>
+        <div class="product">
+            <p id="noproduct">Sorry we currently got no products.</p>
+        </div>
+        <% } %>
+    </div>
+
+    <% if (currentUser && restaurant.owner.equals(currentUser._id)) { %>
+    <div class="butt">
+        <button class="butt2"><a href="/restaurants/<%= restaurant._id %>/edit">Edit Restaurant</a></button>
+        <button class="butt2"><a href="/restaurants/<%= restaurant._id %>/delete">Delete Restaurant</a></button>
+        <button class="butt2"><a href="/restaurants/<%=restaurant._id%>/new">Add Product</a></button>
+    </div>
+    <% } %>
+
+    <div class="main">
+        <div class="outsideRev">
+            <div class="reviews">
+                <% if (restaurant.reviews.length > 0) { %>
+                <hr>
+                <% for (let review of restaurant.reviews) { %>
+                <p class="starability-result" data-rating="<%= review.rating %>">
+                    Rated: <%= review.rating %> stars
+                </p>
+                <p><%= review.review %></p>
+                <p><span id="title"><%= review.title %></span> - <span id="username"><%= review.user.username %></span>
+                </p>
+                <hr>
+                <% } %>
+                <% } else { %>
+                <% if (currentUser) { %>
+                <p>No reviews! Be the first one to post a review.</p>
+                <% } else { %>
+                <p>No reviews! Login and be the first one to post a review.</p>
+                <% } %>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="butt">
+        <button id="secondButt"><a href="/restaurants/<%=restaurant._id%>/reviews/new">Add Review</a></button>
+    </div> -->
+
+    <% if (currentUser) { %>
+    <div class="buttonOut">
+        <div class="hoverButton">
+            <a href="/restaurants/<%=restaurant._id%>/reviews/new"><i title="Add Review"
+                    class="fas fa-plus fa-2x"></i></a>
+        </div>
+    </div>
+    <% } %>
+
+    <div class="empty">
+        <p></p>
+    </div>
+
+    <footer class="foot navbar-dark bg-dark">
+        <h1>Copyright &#169; FoodieHub - Farhan Ali Rahmoon 2020</h1>
+    </footer>
+
+    <script>
+        mapboxgl.accessToken = '<%- process.env.MAPBOX_TOKEN %>';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+            center: ['<%= restaurant.geometry.coordinates[0] %>', '<%= restaurant.geometry.coordinates[1] %>'], // starting position [lng, lat]
+            zoom: 11 // starting zoom
+        });
+
+        const marker = new mapboxgl.Marker()
+            .setLngLat(['<%= restaurant.geometry.coordinates[0] %>', '<%= restaurant.geometry.coordinates[1] %>'])
+            .setPopup(
+                new mapboxgl.Popup({ offset: 25 })
+                    .setHTML(
+                        `<h3 style="font-weight: 700; padding: 10px; padding-bottom: 0;">${'<%= restaurant.name %>'}</h3><p style="padding: 10px; padding-top: 5px;">${'<%= restaurant.location %>'}</p>`
+                    )
+            )
+            .addTo(map);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-popRpmFF9JQgExhfw5tZT4I9/CI5e2QcuUZPOVXb1m7qUmeR2b50u+YFEYe1wgzy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

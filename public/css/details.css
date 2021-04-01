@@ -1,0 +1,505 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:900");
+
+html {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    background: url(https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/143532658/original/57eeb647ac8051b308c0ed8d88bcd8254bd598a0/make-anime-background-arts-for-you.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* object-fit: cover; */
+}
+
+body::after {
+    content: "";
+    background-color: gray;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.navbar .collapse .navbar-text .navLink {
+    text-decoration: none;
+    padding-right: 10px;
+}
+
+.mainMap {
+    display: flex;
+    justify-content: center;
+}
+
+.mainMap .outsideMap {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    margin-top: 70px;
+    width: 80%;
+}
+
+.mainMap .outsideMap #map {
+    height: 300px;
+}
+
+.outNotice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.outNotice .notice {
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    width: 80%;
+    margin-top: 20px;
+    color: rgb(241, 134, 134);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.outNotice .notice #noOwner {
+    padding-top: 10px;
+}
+
+.img {
+    margin-top: 40px;
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    /* height: 30vh; */
+    color: white;
+    text-align: center;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.img h1 {
+    font-weight: 700;
+    font-size: 4rem;
+    padding-bottom: 5px;
+}
+
+.img p {
+    font-size: 1.5rem;
+    padding-top: 5px;
+}
+
+.img p:last-child {
+    padding-top: 15px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.products .product {
+    width: 30%;
+    height: 15vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 10px;
+    text-align: center;
+    border: 1px black solid;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.products .product .buttons {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    justify-content: flex-end;
+    top: 3px;
+    right: 5px;
+}
+
+.products .product .buttons button {
+    width: 4%;
+    font-size: 0.8rem;
+    border: none;
+    background: none;
+}
+
+.products .product .buttons button:first-of-type {
+    margin-right: 5px;
+    margin-top: 7px;
+}
+
+.products .product .buttons button a {
+    color: black;
+    text-decoration: none;
+}
+
+.products .product h1 {
+    padding-bottom: 10px;
+}
+
+.products .product h1 span {
+    font-weight: 700;
+}
+
+.products .product p:last-child {
+    font-weight: 700;
+    padding-top: 10px;
+}
+
+.products .product p #yes {
+    color: green;
+}
+
+.products .product p #no {
+    color:rgb(218, 70, 70);
+}
+
+.products .product #noproduct {
+    padding: 0;
+}
+
+.butt {
+    display: flex;
+    justify-content: center ;
+    margin-top: 5vh;
+}
+
+.butt .butt2 {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+    border: 1px black solid;
+    margin-right: 20px;
+}
+
+.butt .butt2:last-child {
+    margin-right: 0;
+}
+
+.butt .butt2:hover {
+    text-shadow: -1px 0 rgba(255, 255, 255, 0.5), 0 1px rgba(255, 255, 255, 0.5), 1px 0 rgba(255, 255, 255, 0.5), 0 -1px rgba(255, 255, 255, 0.5);
+}
+
+.butt .butt2 a {
+    text-decoration: none;
+    color: black;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.main .outsideRev {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px black solid;
+    height: 40vh;
+    width: 80%;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+}
+
+.main .outsideRev .reviews {
+    /* padding: 40px;
+    padding-top: 20px; */
+    padding: 0 40px;
+    height: 90%;
+    /* background-color: rgb(192, 105, 105); */
+    overflow: auto;
+    width: 100%;
+    /* overflow: fill;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    overflow: auto; */
+}
+
+.main .outsideRev .reviews p {
+    padding: 5px;
+}
+
+/* .main .outsideRev .reviews p:nth-of-type(1) {
+    padding: 0;
+} */
+
+.main .outsideRev .reviews p:last-child {
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+.main .outsideRev .reviews p #title {
+    font-style: italic;
+}
+
+.main .outsideRev .reviews p #username {
+    font-weight: 700;
+}
+
+/* .main .outsideRev {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+    height: 35vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 80%;
+    border: 1px black solid;
+}
+
+.main .outsideRev .reviews {
+    display: flex;
+    flex-direction: column;
+    height: 35vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 80%;
+    border: 1px black solid;
+    padding: 40px;
+    padding-top: 20px;
+    overflow: auto
+} */
+
+/* .outsideRev .reviews hr {
+    color: black;
+} */
+
+.butt #secondButt {
+    margin-bottom: 8vh;
+}
+
+.butt #secondButt {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+    border: 1px black solid;
+}
+
+.butt #secondButt:hover {
+    text-shadow: -1px 0 rgba(255, 255, 255, 0.5), 0 1px rgba(255, 255, 255, 0.5), 1px 0 rgba(255, 255, 255, 0.5), 0 -1px rgba(255, 255, 255, 0.5);
+}
+
+.butt #secondButt a {
+    text-decoration: none;
+    color: black;
+}
+
+.buttonOut {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonOut .hoverButton {
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    border-radius: 10%;
+    height: 5vh;
+    margin: 20px;
+    margin-top: 40px;
+    margin-bottom: 0;
+    border: 1px solid white;
+    padding: 20px 0;
+}
+
+.buttonOut .hoverButton a {
+    text-decoration: none;
+    color: black;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: white;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(119, 116, 116, 0.5);
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.empty {
+    margin: 70px;
+}
+
+.foot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4vh;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+@media (max-width: 500px) {
+    .mainMap .outsideMap #map {
+        height: 200px;
+    }
+
+    .outNotice .notice {
+        font-size: 1.3rem;
+        text-align: center;
+        width: 75%;
+    }
+    .img h1 {
+        font-size: 3rem;
+    }
+
+    .img p {
+        font-size: 1.2rem;
+    }
+
+    .products .product {
+        width: 280px;
+        height: 17vh;
+        padding: 20px;
+    }
+
+    .products .product p:last-child {
+        padding-bottom: 25px;
+    }
+
+    .products .product h1 {
+        padding-top: 25px;
+    }
+
+    .butt .butt2 {
+        width: 24%;
+    }
+
+    .butt .butt2 a {
+        font-size: 0.8rem;
+    }
+
+    .main .outsideRev .reviews p {
+        font-size: 0.7rem;
+    }
+
+    .foot {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-height: 550px) {
+    .mainMap .outsideMap #map {
+        height: 120px;
+    }
+
+    .outNotice .notice {
+        font-size: 1.3rem;
+        text-align: center;
+        width: 75%;
+    }
+    .img h1 {
+        font-size: 3rem;
+    }
+
+    .img p {
+        font-size: 1.2rem;
+    }
+
+    .products .product {
+        width: 280px;
+        height: 32vh;
+        padding: 20px;
+    }
+
+    .products .product p:last-child {
+        padding-bottom: 25px;
+    }
+
+    .products .product h1 {
+        padding-top: 25px;
+    }
+
+    .butt .butt2 {
+        width: 24%;
+    }
+
+    .butt .butt2 a {
+        font-size: 0.8rem;
+    }
+
+    .main .outsideRev .reviews p {
+        font-size: 0.7rem;
+    }
+
+    .foot {
+        font-size: 0.8rem;
+        height: 7vh;
+    }
+}

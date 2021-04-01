@@ -1,0 +1,238 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Custom styles */
+
+html {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    /* background: url(https://i.pinimg.com/originals/57/85/22/57852274d222b1178d69f91198d1ab98.jpg); */
+    background: url(https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/143532658/original/57eeb647ac8051b308c0ed8d88bcd8254bd598a0/make-anime-background-arts-for-you.png);
+    /* background: url(https://res.cloudinary.com/arre/image/upload/e_sharpen:100,f_auto,q_auto/v1468736401/Recipe2_tsyub5.gif); */
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body::after {
+    content: "";
+    background-color: gray;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+/* .navbar {
+    font-family: 'Balsamiq Sans', cursive;
+} */
+
+.navbar .collapse .navbar-text .navLink {
+    text-decoration: none;
+    padding-right: 10px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(0, 0, 0);
+    animation: fade 1s linear forwards;
+}
+
+.main img {
+    padding-bottom: 10px;
+}
+
+.main h1 {
+    font-weight: 700;
+    font-size: 4rem;
+    padding-bottom: 5px;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.main p {
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+}
+
+.main .search {
+    width: 40%;
+    border-radius: 1rem;
+    padding: 10px;
+    background-color: rgba(48, 46, 46, 0.5);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.main .search .bar {
+    width: 95%;
+    padding: 7px;
+    padding-left: 15px;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+input::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+input:hover::-webkit-input-placeholder {
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.7);
+    transition: 0.4s ease-in;
+}
+
+:-moz-placeholder {
+    color: white;
+}
+
+::-moz-placeholder {
+    color: white;
+}
+
+input:focus {outline:0 !important;}
+
+.main .search button {
+    border-radius: 0.5rem;
+    background: none;
+    border: none;
+}
+
+.main .search button .fas {
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.foot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4vh;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+@keyframes fade {
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+
+@media (max-width: 480px) {
+    .main img {
+        width: 150px;
+    }
+    .foot {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 920px) {
+    .main h1 {
+        width: 75%;
+        text-align: center;
+        /* background-color: white; */
+        font-size: 2.9rem;
+    }
+
+    .main p {
+        width: 80%;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .main .search {
+        width: 65%;
+    }
+}
+
+@media (max-height: 550px) {
+    .main img {
+        width: 120px;
+        padding-top: 25px;
+    }
+
+    .main h1 {
+        width: 75%;
+        text-align: center;
+        /* background-color: white; */
+        font-size: 2.5rem;
+    }
+
+    .main p {
+        width: 70%;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+
+    .main .search {
+        width: 60%;
+    }
+
+    .foot {
+        font-size: 0.8rem;
+        height: 7vh;
+    }
+}
